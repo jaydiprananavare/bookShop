@@ -2,9 +2,13 @@ package controllers
 
 import play.api._
 import play.api.mvc._
+import templating.JadeRenderer
 
-object BookController extends Controller{
+class BookController(jadeRenderer : JadeRenderer) extends Controller {
+
   def index = Action{
-    Ok(views.html.book("Your new application is ready."))
+    Ok(jadeRenderer.render(templateName ))
   }
+
+  private val templateName = "main"
 }
