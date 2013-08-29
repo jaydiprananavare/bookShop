@@ -7,6 +7,7 @@ import templating.JadeRenderer
 class BookController(jadeRenderer : JadeRenderer) extends Controller {
 
   def index = Action{
+
     Ok(jadeRenderer.render(templateName ))
   }
 
