@@ -8,4 +8,4 @@ object Controllers {
 
   import Controllers.dependencies._
 
-object BookControllerInstance extends BookController(jadeRenderer)
+object BookControllerInstance extends BookController(bookService,jadeRenderer)
