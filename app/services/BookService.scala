@@ -1,13 +1,16 @@
 package services
 
-import Dao.BookDao
-import Pojo.Book
+import models.BookInstance
+import scala.slick.session.{Session, Database}
+import scala.slick.driver.MySQLDriver.simple._
 
-class BookService(bookDao : BookDao) {
-   //service layer for business logic
-  def insertBook(book:Book)={
+class BookService {
+  Database.forURL(user = "root",password = "root" ,url= "jdbc:mysql://localhost:3306/test", driver = "com.mysql.jdbc.Driver") withSession {
+    implicit session :Session =>
 
-    bookDao.insertBook(book)
+    def getBookById(id:String) = {
+    BookInstance.findBy(id).first
+  }
   }
 
 }

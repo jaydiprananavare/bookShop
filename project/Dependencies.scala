@@ -1,8 +1,14 @@
+import play.Project._
 import sbt._
 object Dependencies {
 
   def dependencies() = {
+    anorm
     Seq(
+
+      "mysql" % "mysql-connector-java" % "5.1.24",
+      "com.typesafe.slick" % "slick_2.10" % "1.0.0",
+    //  "org.slf4j" % "slf4j-nop" % "1.6.4",
       //      "com.google.code.gson" % "gson" % "2.1",
       //      "com.google.guava" % "guava" % "12.0.1",
       "org.fusesource.scalate" % "scalate-core_2.10" % "1.6.1"
